@@ -206,7 +206,7 @@ export default function Home() {
               https://www.linkedin.com/in/yuzhang-liu-x09051420r
             </a>
             <a className="button button-outline-light" href={profile.github} target="_blank" rel="noreferrer">
-              https://github.com/CindybabyLiu
+              https://github.com/yuzliu1222
             </a>
           </div>
           <p className="privacy-note">

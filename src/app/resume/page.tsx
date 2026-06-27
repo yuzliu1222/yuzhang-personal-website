@@ -32,7 +32,7 @@ export default function ResumePage() {
   </a>
   {" · "}
   <a href={profile.github} target="_blank" rel="noreferrer">
-    github.com/CindybabyLiu
+    github.com/yuzliu1222
   </a>
 </span>
           </div>

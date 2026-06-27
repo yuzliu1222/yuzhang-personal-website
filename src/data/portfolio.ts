@@ -21,7 +21,7 @@ export const profile = {
     "Open to 2027 data science, applied AI, machine learning, and AI engineering opportunities.",
   email: "liuyuz@engineering.upenn.edu",
   linkedin: "https://www.linkedin.com/in/yuzhang-liu-x09051420r",
-  github: "https://github.com/CindybabyLiu",
+  github: "https://github.com/yuzliu1222",
 };
 
 export const metrics = [
