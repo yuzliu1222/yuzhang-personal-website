@@ -10,6 +10,8 @@ import {
   skillGroups,
 } from "@/data/portfolio";
 
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main>
@@ -50,7 +52,7 @@ export default function Home() {
                   marginBottom: "1.5rem",
                 }}
               >
-                Hi, I&apos;m Yuzhang Liu.
+                Hi, This is Yuzhang&nbsp;Liu.
               </span>
 
               <span
@@ -143,23 +145,77 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="education">
-        <div className="container two-column education-grid">
-          <SectionHeading eyebrow="02 / EDUCATION" title="Grounded in data science and statistics." />
-          <div className="education-list">
-            {education.map((item) => (
-              <article key={item.school}>
-                <p className="timeline-period">{item.period}</p>
-                <h3>{item.school}</h3>
-                <p>{item.degree}</p>
-                <span>{item.note}</span>
+    <section className="section section-muted" id="education">
+    <div className="container two-column education-grid">
+      <SectionHeading
+        eyebrow="02 / EDUCATION"
+        title="Advancing my data science foundation at Penn."
+        copy="Graduate training in data science, machine learning, large-scale data systems, and applied AI, supported by an honors undergraduate foundation in statistics and computing."
+      />
+
+      <div className="education-list">
+        {education.map((item) => (
+          <article key={`${item.school}-${item.degree}`}>
+            <span>{item.period}</span>
+            <h3>{item.school}</h3>
+            <p>{item.degree}</p>
+            <p>{item.note}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+    </section>
+
+
+          
+      <section className="section section-muted" id="experience">
+        <div className="container">
+          <div className="experience-intro">
+            <SectionHeading
+              eyebrow="03 / EXPERIENCE"
+              title={
+                "Building across semiconductors, healthcare analytics, industrial manufacturing, and enterprise software."
+              }
+              copy={
+                "Applying data science, AI, and software engineering to complex, real-world industry challenges."
+              }
+            />
+
+            <div className="experience-image">
+              <Image
+                src="/images/industry-overlap.png"
+                alt="A blended visual representing technology, industrial manufacturing, and healthcare"
+                fill
+                sizes="(max-width: 900px) 100vw, 38vw"
+              />
+            </div>
+          </div>
+
+          <div className="timeline">
+            {experiences.slice(1).map((experience, index) => (
+              <article
+                className="timeline-item"
+                key={`${experience.organization}-${experience.role}`}
+              >
+                <div className="timeline-index">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div>
+                  <p className="timeline-period">{experience.period}</p>
+                  <h3>{experience.role}</h3>
+                  <p className="timeline-org">{experience.organization}</p>
+                </div>
+
+                <p className="timeline-details">{experience.details}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section-muted" id="experience">
+
+      {/* <section className="section section-muted" id="experience">
         <div className="container">
           <SectionHeading
               eyebrow="03 / EXPERIENCE"
@@ -184,7 +240,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="section" id="projects">
         <div className="container">
